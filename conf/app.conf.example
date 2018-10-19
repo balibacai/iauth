@@ -14,5 +14,6 @@ mysql.database   = "beego"
 log.driver = "console"
 log.level = 7
 
+jwt.mode = 2
 # jwt.secret = ""
 jwt.private_key_pem_path = "rsaprivatekey.pem"

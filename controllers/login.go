@@ -81,7 +81,7 @@ func (c *LoginController) Post() {
 	// expired after 30 days
 	expiredAt := now.Unix() + 2592000
 
-	tokenString, err := extensions.NewRSAJWTTokenStringWithClaims(filters.LoginClaims{
+	tokenString, err := extensions.NewJWTTokenStringWithClaims(filters.LoginClaims{
 		UserID: userID,
 		StandardClaims: jwt.StandardClaims {
 			ExpiresAt: expiredAt,
