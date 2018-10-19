@@ -2,11 +2,11 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"beego/models"
+	"auth/models"
 	"time"
-	"beego/response"
-	"beego/extensions"
-	"beego/filters"
+	"auth/response"
+	"auth/extensions"
+	"auth/filters"
 )
 
 type NestPreparer interface {

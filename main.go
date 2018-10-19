@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "beego/routers"
+	_ "auth/routers"
 
-	"beego/bootstrap"
+	"auth/bootstrap"
 	"github.com/astaxie/beego"
 )
 

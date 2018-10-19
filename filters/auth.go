@@ -4,8 +4,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"fmt"
 	"github.com/astaxie/beego/context"
-	"beego/extensions"
-	"beego/response"
+	"auth/extensions"
+	"auth/response"
 )
 
 var (

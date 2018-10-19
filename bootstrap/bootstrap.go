@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	"time"
-	"beego/extensions"
+	"auth/extensions"
 	"github.com/astaxie/beego/logs"
 	_ "github.com/go-sql-driver/mysql"
 )

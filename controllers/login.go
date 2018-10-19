@@ -5,12 +5,12 @@ import (
 	"github.com/astaxie/beego/validation"
 	"github.com/astaxie/beego/logs"
 	"time"
-	"beego/extensions"
+	"auth/extensions"
 	"github.com/dgrijalva/jwt-go"
-	"beego/filters"
-	"beego/models"
-	"beego/requests"
-	"beego/response"
+	"auth/filters"
+	"auth/models"
+	"auth/requests"
+	"auth/response"
 )
 
 // LoginController operations for Login
