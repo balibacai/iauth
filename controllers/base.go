@@ -7,6 +7,8 @@ import (
 	"auth/response"
 	"auth/extensions"
 	"auth/filters"
+	"strings"
+	"github.com/astaxie/beego/logs"
 )
 
 type NestPreparer interface {
@@ -38,18 +40,25 @@ func (this *baseController) Prepare() {
 func (this *baseController) initAuth() {
 	this.isLogin = false
 
-	tokenString := this.Ctx.Input.Header("token")
-	//fmt.Println("token:" + tokenString)
+	// get token from Authorization Header
+	tokenFullString := this.Ctx.Input.Header("Authorization")
 
-	if len(tokenString) == 0 {
+	if !strings.HasPrefix(tokenFullString, "Bearer ") {
 		this.JsonOutput(response.JsonResult{Error: 101001, Msg: "require token"})
+		return
 	}
+
+	tokenString := tokenFullString[7:]
+
+	//fmt.Println("token:" + tokenString)
 
 	// parse token with claims
 	token, err := extensions.ParseJWTTokenWithClaims(tokenString, &filters.LoginClaims{})
 
 	if err != nil {
+		logs.Error(err)
 		this.JsonOutput(response.JsonResult{Error: 101002, Msg: "parse token error"})
+		return
 	}
 
 	// validate & extract token
@@ -57,19 +66,20 @@ func (this *baseController) initAuth() {
 		user, err := models.GetUserById(claims.UserID)
 		if err != nil {
 			this.JsonOutput(response.JsonResult{Error: 101004, Msg: "user not exist"})
+			return
 		}
 		// assign user
 		this.user = user
 		this.isLogin = true
 	} else {
 		this.JsonOutput(response.JsonResult{Error: 101003, Msg: "token expired"})
+		return
 	}
 }
 
-// output json data and exit
-func (this *baseController) JsonOutput(data interface{})  {
+// output json data
+func (this *baseController) JsonOutput(data interface{}) {
 	this.Data["json"] = &data
 	this.ServeJSON()
-	this.StopRun()
 }
 
