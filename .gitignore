@@ -5,7 +5,7 @@ conf/app.conf
 vendor/*
 !vendor/vendor.json
 
-auth
+iauth
 *.tmp
 *.pem
 

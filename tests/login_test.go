@@ -6,16 +6,16 @@ import (
 	"testing"
 	"runtime"
 	"path/filepath"
-	_ "auth/routers"
+	_ "iauth/routers"
 
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"
 	"net/url"
 	"strings"
 	"strconv"
-	"auth/bootstrap"
+	"iauth/bootstrap"
 	"encoding/json"
-	"auth/response"
+	"iauth/response"
 )
 
 func init() {

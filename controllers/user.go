@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"auth/models"
+	"iauth/models"
 	"encoding/json"
 	"strconv"
-	"auth/response"
+	"iauth/response"
 )
 
 //  UserController operations for User

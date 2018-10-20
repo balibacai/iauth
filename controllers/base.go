@@ -2,11 +2,11 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"auth/models"
+	"iauth/models"
 	"time"
-	"auth/response"
-	"auth/extensions"
-	"auth/filters"
+	"iauth/response"
+	"iauth/extensions"
+	"iauth/filters"
 	"strings"
 	"github.com/astaxie/beego/logs"
 )

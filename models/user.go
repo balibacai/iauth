@@ -3,7 +3,7 @@ package models
 import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"auth/requests"
+	"iauth/requests"
 )
 
 type User struct {
