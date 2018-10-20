@@ -93,6 +93,12 @@
 			"revisionTime": "2017-05-03T22:40:06Z"
 		},
 		{
+			"checksumSHA1": "QsRwGeNyPv/g1AibnB4KbiIvZ1I=",
+			"path": "github.com/mistcheng/ilib/ijwt",
+			"revision": "feeda0a17f59cd6d1f37144344f7862940578474",
+			"revisionTime": "2018-10-20T13:50:52Z"
+		},
+		{
 			"checksumSHA1": "IFtQxH02Qj36QooV+Z41enAh/hc=",
 			"path": "github.com/smartystreets/assertions",
 			"revision": "7c9eb446e3cf06e83049467a5f25c38730ce7034",
@@ -143,10 +149,6 @@
 			"revisionTime": "2018-07-31T13:18:48Z"
 		},
 		{
-			"path": "google.golang.org/appengine/cloudsql",
-			"revision": ""
-		},
-		{
 			"checksumSHA1": "ZSWoOPUNRr5+3dhkLK3C4cZAQPk=",
 			"origin": "github.com/astaxie/beego/vendor/gopkg.in/yaml.v2",
 			"path": "gopkg.in/yaml.v2",
@@ -154,5 +156,5 @@
 			"revisionTime": "2018-07-31T13:18:48Z"
 		}
 	],
-	"rootPath": "auth"
+	"rootPath": "iauth"
 }

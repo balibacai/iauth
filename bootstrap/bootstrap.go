@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	"time"
-	"iauth/extensions"
+	"github.com/mistcheng/ilib/ijwt"
 	"github.com/astaxie/beego/logs"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -22,17 +22,17 @@ func AppConfig()  {
 	orm.Debug = beego.AppConfig.DefaultBool("orm.debug", false)
 
 	// config jwt
-	extensions.SetJWTMode(extensions.JWTMode(beego.AppConfig.DefaultInt("jwt.mode", 0)))
+	ijwt.SetJWTMode(ijwt.JWTMode(beego.AppConfig.DefaultInt("jwt.mode", 0)))
 	if jwtSecret := beego.AppConfig.String("jwt.secret"); len(jwtSecret) > 0 {
-		extensions.SetJWTSecret(jwtSecret)
+		ijwt.SetJWTSecret(jwtSecret)
 	}
 
 	if jwtPrivateKeyPath := beego.AppConfig.String("jwt.private_key_pem_path"); len(jwtPrivateKeyPath) > 0 {
-		extensions.SetJWTPrivateKey(jwtPrivateKeyPath)
+		ijwt.SetJWTPrivateKey(jwtPrivateKeyPath)
 	}
 
 	if jwtPublicKeyPath := beego.AppConfig.String("jwt.public_key_pem_path"); len(jwtPublicKeyPath) > 0 {
-		extensions.SetJWTPublicKey(jwtPublicKeyPath)
+		ijwt.SetJWTPublicKey(jwtPublicKeyPath)
 	}
 
 	// logs config

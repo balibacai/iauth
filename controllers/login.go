@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego/validation"
 	"github.com/astaxie/beego/logs"
 	"time"
-	"iauth/extensions"
+	"github.com/mistcheng/ilib/ijwt"
 	"github.com/dgrijalva/jwt-go"
 	"iauth/filters"
 	"iauth/models"
@@ -81,7 +81,7 @@ func (c *LoginController) Post() {
 	// expired after 30 days
 	expiredAt := now.Unix() + 2592000
 
-	tokenString, err := extensions.NewJWTTokenStringWithClaims(filters.LoginClaims{
+	tokenString, err := ijwt.NewJWTTokenStringWithClaims(filters.LoginClaims{
 		UserID: userID,
 		StandardClaims: jwt.StandardClaims {
 			ExpiresAt: expiredAt,
